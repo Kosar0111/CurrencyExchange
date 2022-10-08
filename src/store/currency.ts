@@ -17,12 +17,10 @@ const initialState: ICurrencySlice = {
   currency: []
 }
 
-export const getAllCurrency = createAsyncThunk('goods/getGoods', async (_) => {
+export const getAllCurrency = createAsyncThunk('goods/getGoods', async _ => {
   const response = await axios.get<ICurrency>(
     'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json'
   )
-  console.log(response.data)
-
   return response.data
 })
 
@@ -34,8 +32,8 @@ const currencySlice = createSlice({
       state.currency = action.payload
     }
   },
-  extraReducers: (builder) => {
-    builder.addCase(getAllCurrency.pending, (state) => {
+  extraReducers: builder => {
+    builder.addCase(getAllCurrency.pending, state => {
       state.loading = true
       state.error = false
       state.currency = []
@@ -45,7 +43,7 @@ const currencySlice = createSlice({
       state.error = false
       currencySlice.caseReducers.allCurrency(state, action)
     })
-    builder.addCase(getAllCurrency.rejected, (state) => {
+    builder.addCase(getAllCurrency.rejected, state => {
       state.loading = false
       state.error = true
       state.message = 'Something went wrong'
