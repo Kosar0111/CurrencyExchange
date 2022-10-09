@@ -1,8 +1,8 @@
 import { FC } from 'react'
-import { ICurrency } from '../../model/interfaceCurrency'
+import { ICurrency } from '../../../model/interfaceCurrency'
 import './Currency.css'
 
-export const Currency: FC<ICurrency> = (el: any) => {
+export const Currency: FC<ICurrency> = (el: ICurrency) => {
   // const currentValue = localStorage.getItem('currency')
   // console.log(localStorage.getItem('currency'))
   // let value = el.rate
