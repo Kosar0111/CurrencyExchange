@@ -13,3 +13,29 @@
   background-color: blueviolet;
   color: #fff;
 }
+.sum-money {
+  width: 40vw;
+  height: 30px;
+  font-size: 1.5rem;
+}
+.sum-label {
+  font-size: 2rem;
+  margin-right: 30px;
+  color: blueviolet;
+  font-weight: bold;
+}
+.total {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+.total-title {
+  font-size: 2rem;
+  color: blueviolet;
+  font-weight: bold;
+}
+.total-sum {
+  font-size: 2rem;
+  color: blueviolet;
+  font-weight: bold;
+}

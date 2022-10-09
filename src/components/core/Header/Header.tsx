@@ -10,8 +10,6 @@ export const Header: FC = () => {
     el => el.cc === 'CAD' || el.cc === 'AED' || el.cc === 'USD' || el.cc === 'EUR'
   )
 
-  console.log(state)
-
   const choiceCurrency = (cur: string): void => {
     localStorage.setItem('currency', `${cur}`)
     setState(cur)
@@ -22,7 +20,7 @@ export const Header: FC = () => {
       <label className="label">Choice currency</label>
       <select onChange={e => choiceCurrency(e.target.value)}>
         <option disabled>Choice currency </option>
-        <option value="UAH" onClick={() => choiceCurrency('UAH')}>
+        <option value="UAH" onChange={() => choiceCurrency('UAH')}>
           UAH
         </option>
         {filterCurrency.map(el => (
